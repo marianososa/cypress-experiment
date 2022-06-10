@@ -1,7 +1,7 @@
 //This script has been added just for structure purposes
 //Modifications need to be performed in order to be executed in
 // automationexercise.com
-const logo= '[data-testid=headerBrandLogoDesktop]'
+const logo= 'a > img'
 
 class logInPage{
 
@@ -11,11 +11,11 @@ class logInPage{
     }
 
     static loginUser() {
-        cy.loginOnly()
+        //cy.loginOnly()
     }
 
     static logoutUser() {
-        cy.logout()
+        //cy.logout()
     }
 }
 
