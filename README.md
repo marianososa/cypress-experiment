@@ -6,6 +6,8 @@ npm ci
 
 Run the scripts headless: npx cypress run
 Run the scripts with an interface: npx cypress open
+
+NOTE:
 Project is using cypress 9.6.1
 npm install --save-dev cypress@9.6.1 
 ```
