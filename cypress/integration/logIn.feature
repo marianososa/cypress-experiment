@@ -1,8 +1,10 @@
-Feature: Log in/out in the app
+Feature: Log in in the app
 
-     As a user I want to log in and log out
+     As a user I want to log in with correct email and password
 
-     Scenario: Log in/out in the app
-         Given I am a user
-         When I login in the app
-         Then I logout in the app
+     Scenario: Log in into the app with valid credentials
+         Given I am a registered user at the main page
+         And I have clicked on the Login button
+         When I enter the correct email and password in the log in page
+         And I click on the login button
+         Then I should be logged in and my username should be displayed
