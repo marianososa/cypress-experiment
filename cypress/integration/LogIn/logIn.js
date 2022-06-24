@@ -1,5 +1,5 @@
 import{ Given, When, And, Then } from 'cypress-cucumber-preprocessor/steps'
-import logInPage from './logInPage'
+import logInPage from '../PageObjects/logInPage'
 
 Given ('I am a registered user at the main page', () => {
     logInPage.homepage()

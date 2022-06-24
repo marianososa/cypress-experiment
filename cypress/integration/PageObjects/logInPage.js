@@ -1,6 +1,3 @@
-//This script has been added just for structure purposes
-//Modifications need to be performed in order to be executed in
-// automationexercise.com
 const logoImg = 'a > img'
 const loginLnk = '.shop-menu > .nav > :nth-child(4) > a'
 const emailTxt = '.login-form > form > [type="email"]'
