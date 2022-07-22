@@ -21,6 +21,11 @@ class logInPage{
         cy.get(passwordTxt).type(`${Cypress.env('QaAutomationPassword')}`)
     }
 
+    static enterInvalidCreds() {
+        cy.get(emailTxt).type('invalid_user@email.com')
+        cy.get(passwordTxt).type('notValidPassword')
+    }
+
     static clickLoginButton() {
         cy.get(loginBtn).click()
     }
@@ -28,6 +33,7 @@ class logInPage{
     static validateUserIsLoggedIn() {
         cy.get(loggedInLbl).should('be.visible')
     }
+
 }
 
 export default logInPage
