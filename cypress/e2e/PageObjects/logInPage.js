@@ -4,6 +4,7 @@ const emailTxt = '.login-form > form > [type="email"]'
 const passwordTxt = '[type="password"]'
 const loginBtn = '.login-form > form > .btn'
 const loggedInLbl = ':nth-child(9) > a'
+const incorrectEmailLbl = '.login-form > form > p'
 
 class logInPage{
 
@@ -32,6 +33,10 @@ class logInPage{
 
     static validateUserIsLoggedIn() {
         cy.get(loggedInLbl).should('be.visible')
+    }
+
+    static validateIncorrectLogin() {
+        cy.get(incorrectEmailLbl).should('be.visible')
     }
 
 }
