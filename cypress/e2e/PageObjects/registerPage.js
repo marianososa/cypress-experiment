@@ -1,13 +1,12 @@
 import { faker } from '@faker-js/faker';
-const signupLnk = '.shop-menu > .nav > :nth-child(4) > a'
-const nameTxt = '[type="text"]'
-const emailTxt = '.signup-form > form > [type="email"]'
-const signupBtn = '.signup-form > form > .btn'
 var ranDay = () => Cypress._.random(0, 10)
 var rdmDay = ranDay()
 var ranYear = () => Cypress._.random(1940, 2000)
 var rdmYear = ranYear()
-const randomEmail = `${id}@mailinator.com`
+const signupLnk = '.shop-menu > .nav > :nth-child(4) > a'
+const nameTxt = '[type="text"]'
+const emailTxt = '.signup-form > form > [type="email"]'
+const signupBtn = '.signup-form > form > .btn'
 const genderChk = '#id_gender1'
 const passwordSignupTxt = '#password'
 const dayBirthCbo = '#days'
