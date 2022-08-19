@@ -39,6 +39,13 @@ class logInPage{
         cy.get(incorrectEmailLbl).should('be.visible')
     }
 
+    static validateIncorrectLogin() {
+        cy.get(incorrectEmailLbl).should('be.visible')
+    }
+
+    static validateLoginPageIsDisplayed() {
+        cy.get(emailTxt).should('be.visible')
+    }
 }
 
 export default logInPage
