@@ -18,5 +18,5 @@ And ('I click on the login button', () => {
 })
 
 Then ('An error message explaining that my credentials are not correct should be displayed', () => {
-    logInPage.validateUserIsLoggedIn() //<-EDIT
+    logInPage.validateIncorrectLogin()
 })
