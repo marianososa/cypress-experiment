@@ -16,6 +16,5 @@ module.exports = defineConfig({
       // eslint-disable-next-line global-require
       return require('./cypress/plugins/index')(on, config);
     },
-    specPattern: 'cypress/e2e/**/*.{feature,features}',
   },
 });
