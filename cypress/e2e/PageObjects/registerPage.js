@@ -30,6 +30,8 @@ const continueBtn = '[data-qa="continue-button"]'
 const usernameLbl = ':nth-child(10) > a'
 const deleteAccountBtn = '.shop-menu > .nav > :nth-child(5) > a'
 const confirmDeleteBtn = '.modal-footer > .button-form > .btn'
+const emailAlreadyExistLbl =  '.signup-form > form > p'
+
 
 class registerPage{
 
@@ -45,6 +47,11 @@ class registerPage{
     static enterUserInformation() {
         cy.get(nameTxt).type(faker.name.firstName() + ' ' + faker.name.lastName())
         cy.get(emailTxt).type(faker.internet.email() )
+    }
+
+    static enterExistingUserInformation() {
+        cy.get(nameTxt).type(faker.name.firstName() + ' ' + faker.name.lastName())
+        cy.get(emailTxt).type(`${Cypress.env('QaAutomationUser')}`)
     }
 
     static selectGender() {
@@ -123,6 +130,10 @@ class registerPage{
 
     static validateIncorrectLogin() {
         cy.get(incorrectEmailLbl).should('be.visible')
+    }
+
+    static validateEmailExistError() {
+        cy.get(emailAlreadyExistLbl).should('be.visible')
     }
 
 }
