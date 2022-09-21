@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint **/*.jsx --fix"
   },
   "repository": {
     "type": "git",
@@ -17,11 +18,19 @@
     "url": "https://github.com/marianososa/cypress-experiment/issues"
   },
   "homepage": "https://github.com/marianososa/cypress-experiment#readme",
-  "devDependencies": {
+  "dependencies": {
     "@faker-js/faker": "^7.4.0",
     "cypress": "^10.6.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
-    "cypress-each": "^1.11.0"
+    "cypress-each": "^1.11.0",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
