@@ -114,5 +114,4 @@ class registerPage {
     cy.get(signupBtn).click();
   }
 }
-
 export default registerPage;
