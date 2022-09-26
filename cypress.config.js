@@ -9,6 +9,7 @@ module.exports = defineConfig({
   viewportWidth: 1366,
   viewportHeight: 768,
   chromeWebSecurity: false,
+  clientRoute: '/',
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.

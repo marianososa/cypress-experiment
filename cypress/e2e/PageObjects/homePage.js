@@ -4,6 +4,9 @@ const testCasesLnk = '.shop-menu > .nav > :nth-child(5) > a';
 
 class homePage {
   static clickLogOut() {
+    cy.intercept('GET', '/logout', (req) => {
+      req.redirect('/login');
+    });
     cy.get(logOutLnk).click();
   }
 
