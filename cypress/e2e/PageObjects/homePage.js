@@ -1,6 +1,8 @@
 const logOutLnk = '.shop-menu > .nav > :nth-child(4) > a';
 const logoImg = '.logo';
 const testCasesLnk = '.shop-menu > .nav > :nth-child(5) > a';
+const productsLnk = 'Products';
+const allProductsLbl = 'all products';
 
 class homePage {
   static clickLogOut() {
@@ -17,6 +19,11 @@ class homePage {
 
   static clickOnTestCases() {
     cy.get(testCasesLnk).click();
+  }
+
+  static navigateToProducts() {
+    cy.contains(productsLnk).click();
+    cy.contains(allProductsLbl, { matchCase: false }).should('be.visible');
   }
 }
 
