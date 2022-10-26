@@ -1,6 +1,7 @@
 const logOutLnk = '.shop-menu > .nav > :nth-child(4) > a';
 const logoImg = '.logo';
 const testCasesLnk = '.shop-menu > .nav > :nth-child(5) > a';
+const contactUsLnk = '.shop-menu > .nav > :nth-child(8) > a';
 
 class homePage {
   static clickLogOut() {
@@ -14,6 +15,10 @@ class homePage {
 
   static clickOnTestCases() {
     cy.get(testCasesLnk).click();
+  }
+  
+  static clickOnContactUs() {
+    cy.get(contactUsLnk).click();
   }
 }
 
