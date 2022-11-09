@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 const logOutLnk = '.shop-menu > .nav > :nth-child(4) > a';
 const logoImg = '.logo';
 const testCasesLnk = '.shop-menu > .nav > :nth-child(5) > a';
+const contactUsLnk = '.shop-menu > .nav > :nth-child(8) > a';
 const productsLnk = 'Products';
 const allProductsLbl = 'all products';
 const subscriptionLbl = 'SUBSCRIPTION';
@@ -33,7 +34,11 @@ class homePage {
   static clickOnTestCases() {
     cy.get(testCasesLnk).click();
   }
-
+  
+  static clickOnContactUs() {
+    cy.get(contactUsLnk).click();
+  }
+  
   static navigateToProducts() {
     cy.contains(productsLnk).click();
     cy.contains(allProductsLbl, { matchCase: false }).should('be.visible');
@@ -50,6 +55,7 @@ class homePage {
 
   static verifySubscribed() {
     cy.get(successfullSubscribedLbl).should('be.visible');
+
   }
 }
 
