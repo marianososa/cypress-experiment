@@ -19,8 +19,5 @@ import './commands';
 require('@cypress/xpath');
 
 Cypress.Cookies.defaults({
-  preserve: 'csrftoken',
+  preserve: ['csrftoken', 'sessionid'],
 });
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
