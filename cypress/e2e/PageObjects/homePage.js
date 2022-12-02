@@ -12,6 +12,7 @@ const arrowIconBtn = '[class="fa fa-arrow-circle-o-right"]';
 const successfullSubscribedLbl = '.alert-success';
 const cartLnk = 'Cart';
 const shoppingCartLbl = '.active';
+const firstProductLnk = '//a[@href="/product_details/1"]'; // xpath
 
 class homePage {
   static clickLogOut() {
@@ -34,11 +35,11 @@ class homePage {
   static clickOnTestCases() {
     cy.get(testCasesLnk).click();
   }
-  
+
   static clickOnContactUs() {
     cy.get(contactUsLnk).click();
   }
-  
+
   static navigateToProducts() {
     cy.contains(productsLnk).click();
     cy.contains(allProductsLbl, { matchCase: false }).should('be.visible');
@@ -55,7 +56,10 @@ class homePage {
 
   static verifySubscribed() {
     cy.get(successfullSubscribedLbl).should('be.visible');
+  }
 
+  static selectFirstProduct() {
+    cy.xpath(firstProductLnk).click();
   }
 }
 

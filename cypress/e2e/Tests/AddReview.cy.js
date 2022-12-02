@@ -1,4 +1,4 @@
-import homePage from '../PageObjects/homePage';
+import homePage from '../PageObjects/HomePage';
 import productsPage from '../PageObjects/ProductsPage';
 
 const reviewTitle = 'Write Your Review';
