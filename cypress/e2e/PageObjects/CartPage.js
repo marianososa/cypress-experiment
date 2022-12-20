@@ -12,6 +12,7 @@ const firstPriceDescription = '.cart_price > p';
 const firstDetailsDescription = '#product-2 > .cart_description > h4 > a';
 const secondPriceDescription = '.cart_price > p';
 const secondDetailsDescription = '#product-3 > .cart_description > h4 > a';
+const cartQuantityLbl = '//td[@class="cart_quantity"]';
 
 class cartPage {
   static addFirstProduct() {
@@ -45,6 +46,10 @@ class cartPage {
     cy.get(firstDetailsDescription).contains(productsData.menShirtInfo);
     cy.get(secondPriceDescription).contains(productsData.dressPrice);
     cy.get(secondDetailsDescription).contains(productsData.dressInfo);
+  }
+
+  static verifyQuantityItems(qty) {
+    cy.xpath(cartQuantityLbl).contains(qty);
   }
 }
 export default cartPage;
