@@ -13,7 +13,6 @@ describe('As a user I want to register on the page before adding products into t
 
   it('And I have registered on the page', () => {
     registerPage.navigateToRegister();
-    // registerPage.enterUserInformation();
     registerPage.clickSignupButton();
     registerPage.enterUserInformation();
     registerPage.clickSignupButton();
@@ -38,7 +37,6 @@ describe('As a user I want to register on the page before adding products into t
   it('When I review the cart and click on Proceed to Checkout', () => {
     cartPage.clickViewCart();
     cartPage.clickProceedToCheckout();
-    // cartPage.clickRegisterLogin();
   });
 
   it('And I complete the checkout', () => {
