@@ -13,6 +13,8 @@ const firstDetailsDescription = '#product-2 > .cart_description > h4 > a';
 const secondPriceDescription = '.cart_price > p';
 const secondDetailsDescription = '#product-3 > .cart_description > h4 > a';
 const cartQuantityLbl = '//td[@class="cart_quantity"]';
+const proceedToCheckoutBtn = '.col-sm-6 > .btn';
+const registerLoginLnk = '//*[@id="checkoutModal"]//u'; // Xpath
 
 class cartPage {
   static addFirstProduct() {
@@ -39,6 +41,14 @@ class cartPage {
 
   static clickViewCart() {
     cy.contains(viewCartLnk).click();
+  }
+
+  static clickProceedToCheckout() {
+    cy.get(proceedToCheckoutBtn).click();
+  }
+
+  static clickRegisterLogin() {
+    cy.xpath(registerLoginLnk).click();
   }
 
   static verifyCartItems() {
