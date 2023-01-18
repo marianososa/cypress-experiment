@@ -10,6 +10,7 @@ const emailField = '#email';
 const reviewField = '#review';
 const submitBtn = '#button-review';
 const reviewSuccessMsgTxt = '#review-section > div > div > span';
+const brandProductsLink = '.brands-name ul a';
 
 class productsPage {
   static searchForProduct(product) {
@@ -49,6 +50,10 @@ class productsPage {
     cy.get(reviewSuccessMsgTxt).should('exist');
     cy.get(reviewSuccessMsgTxt).should('be.visible');
     cy.get(reviewSuccessMsgTxt).contains(reviewSuccessMsg);
+  }
+
+  static navigateToBrandFromList(brandIndex) {
+    cy.get(brandProductsLink).eq(brandIndex).click();
   }
 }
 
