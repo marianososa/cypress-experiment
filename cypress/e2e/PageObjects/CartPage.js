@@ -1,17 +1,24 @@
 import productsData from '../../fixtures/products.json';
 
-const firstProductBtn = ':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > .btn';
-const firstProductPrice = ':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > h2';
-const firstProductDescription = ':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > p';
-const secondProductBtn = ':nth-child(5) > .product-image-wrapper > .single-products > .productinfo > .btn';
-const secondProductPrice = ':nth-child(5) > .product-image-wrapper > .single-products > .productinfo > h2';
-const secondProductDescription = ':nth-child(5) > .product-image-wrapper > .single-products > .productinfo > p';
+const firstProductBtn = ':nth-child(3) > .product-image-wrapper > .single-products > .productinfo > .btn';
+const firstProductPrice = ':nth-child(3) > .product-image-wrapper > .single-products > .productinfo > h2';
+const firstProductDescription = ':nth-child(3) > .product-image-wrapper > .single-products > .productinfo > p';
+const secondProductBtn = ':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > .btn';
+const secondProductPrice = ':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > h2';
+const secondProductDescription = ':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > p';
+const thirdProductBtn = ':nth-child(5) > .product-image-wrapper > .single-products > .productinfo > .btn';
 const continueShoppingBtn = '.modal-footer > .btn';
 const viewCartLnk = 'View Cart';
-const firstPriceDescription = '.cart_price > p';
-const firstDetailsDescription = '#product-2 > .cart_description > h4 > a';
-const secondPriceDescription = '.cart_price > p';
-const secondDetailsDescription = '#product-3 > .cart_description > h4 > a';
+const item1PriceDescription = '#product-1 > .cart_price > p';
+const item1DetailsDescription = '#product-1 > .cart_description > h4 > a';
+const item2PriceDescription = '#product-2 >.cart_price > p';
+const item2DetailsDescription = '#product-2 > .cart_description > h4 > a';
+const item8PriceDescription = '#product-8 >.cart_price > p';
+const item8DetailsDescription = '#product-8 > .cart_description > h4 > a';
+const item29PriceDescription = '#product-29 >.cart_price > p';
+const item29DetailsDescription = '#product-29 > .cart_description > h4 > a';
+const item31PriceDescription = '#product-31 >.cart_price > p';
+const item31DetailsDescription = '#product-31 > .cart_description > h4 > a';
 const cartQuantityLbl = '//td[@class="cart_quantity"]';
 const proceedToCheckoutBtn = '.col-sm-6 > .btn';
 const registerLoginLnk = '//*[@id="checkoutModal"]//u'; // Xpath
@@ -35,6 +42,10 @@ class cartPage {
     cy.get(secondProductDescription).invoke('text').as('secondDescription');
   }
 
+  static addThirdProduct() {
+    cy.get(thirdProductBtn).click();
+  }
+
   static clickContinueShopping() {
     cy.get(continueShoppingBtn).click();
   }
@@ -52,14 +63,23 @@ class cartPage {
   }
 
   static verifyCartItems() {
-    cy.get(firstPriceDescription).contains(productsData.menShirtPrice);
-    cy.get(firstDetailsDescription).contains(productsData.menShirtInfo);
-    cy.get(secondPriceDescription).contains(productsData.dressPrice);
-    cy.get(secondDetailsDescription).contains(productsData.dressInfo);
+    cy.get(item1PriceDescription).contains(productsData.blueTopPrice);
+    cy.get(item1DetailsDescription).contains(productsData.blueTopInfo);
+    cy.get(item2PriceDescription).contains(productsData.menShirtPrice);
+    cy.get(item2DetailsDescription).contains(productsData.menShirtInfo);
   }
 
   static verifyQuantityItems(qty) {
     cy.xpath(cartQuantityLbl).contains(qty);
+  }
+
+  static verifyGreenCartItems() {
+    cy.get(item8PriceDescription).contains(productsData.fancyTopPrice);
+    cy.get(item8DetailsDescription).contains(productsData.fancyTopInfo);
+    cy.get(item29PriceDescription).contains(productsData.greenTShirtPrice);
+    cy.get(item29DetailsDescription).contains(productsData.greenTShirtInfo);
+    cy.get(item31PriceDescription).contains(productsData.cottonTShirtPrice);
+    cy.get(item31DetailsDescription).contains(productsData.cottonTShirtInfo);
   }
 }
 export default cartPage;
