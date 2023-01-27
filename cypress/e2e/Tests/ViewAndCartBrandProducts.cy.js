@@ -22,7 +22,7 @@ describe('As a non registered user I want to search products by its brand and se
         cy.url().then(url => {
             selectedBrand = url.split('/').pop();
             productsPage.clickViewProductOfFirstItem();
-            ProductDetailsPage.verifyProductBrand(selectedBrand);
+            productDetailsPage.verifyProductBrand(selectedBrand);
         });
     });
 });
