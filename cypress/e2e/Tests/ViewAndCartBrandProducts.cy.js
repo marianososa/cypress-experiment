@@ -1,5 +1,5 @@
 import homePage from "../PageObjects/HomePage";
-import ProductDetailsPage from "../PageObjects/ProductDetailsPage";
+import productDetailsPage from "../PageObjects/ProductDetailsPage";
 import productsPage from "../PageObjects/ProductsPage";
 
 const firstBrandIndex = 0;
