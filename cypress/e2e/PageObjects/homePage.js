@@ -69,8 +69,8 @@ class homePage {
     cy.contains(recommendedItems).should('be.visible').scrollIntoView();
   }
 
-  static addToCartRecommendedProduct() {
-    cy.get(recommendedProdCarousel).find(cartRecommendedProdButton).first().click();
+  static addToCartRecommendedProduct(prodIndex) {
+    cy.get(recommendedProdCarousel).find(cartRecommendedProdButton).eq(prodIndex).click();
   }
 }
 
