@@ -12,6 +12,9 @@ const arrowIconBtn = '[class="fa fa-arrow-circle-o-right"]';
 const successfullSubscribedLbl = '.alert-success';
 const cartLnk = 'Cart';
 const shoppingCartLbl = '.active';
+const categoryLbl = '.left-sidebar > :nth-child(1)';
+const womenCategoryBtn = ':nth-child(1) > .panel-heading > .panel-title > a';
+const womenDressCategoryBtn = '#Women > .panel-body > ul > :nth-child(1) > a';
 
 class homePage {
   static clickLogOut() {
@@ -34,11 +37,11 @@ class homePage {
   static clickOnTestCases() {
     cy.get(testCasesLnk).click();
   }
-  
+
   static clickOnContactUs() {
     cy.get(contactUsLnk).click();
   }
-  
+
   static navigateToProducts() {
     cy.contains(productsLnk).click();
     cy.contains(allProductsLbl, { matchCase: false }).should('be.visible');
@@ -55,7 +58,18 @@ class homePage {
 
   static verifySubscribed() {
     cy.get(successfullSubscribedLbl).should('be.visible');
+  }
 
+  static verifyCategories() {
+    cy.get(categoryLbl).should('be.visible');
+  }
+
+  static clickOnWomenCategory() {
+    cy.get(womenCategoryBtn).click();
+  }
+
+  static clickOnWomenDressCategory() {
+    cy.get(womenDressCategoryBtn).click();
   }
 }
 

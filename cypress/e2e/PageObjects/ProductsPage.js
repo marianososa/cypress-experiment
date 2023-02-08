@@ -10,6 +10,10 @@ const emailField = '#email';
 const reviewField = '#review';
 const submitBtn = '#button-review';
 const reviewSuccessMsgTxt = '#review-section > div > div > span';
+const womenDressCategoryLbl = '.title';
+const menCategoryBtn = ':nth-child(2) > .panel-heading > .panel-title > a';
+const menTshirtsCategoryBtn = '#Men > .panel-body > ul > :nth-child(1) > a';
+const menTshirtsProductsLbl = '.title';
 
 class productsPage {
   static searchForProduct(product) {
@@ -49,6 +53,22 @@ class productsPage {
     cy.get(reviewSuccessMsgTxt).should('exist');
     cy.get(reviewSuccessMsgTxt).should('be.visible');
     cy.get(reviewSuccessMsgTxt).contains(reviewSuccessMsg);
+  }
+
+  static verifyWomenDressProducts() {
+    cy.get(womenDressCategoryLbl).should('be.visible');
+  }
+
+  static clickOnMenCategory() {
+    cy.get(menCategoryBtn).click();
+  }
+
+  static clickOnMenTshirtsCategory() {
+    cy.get(menTshirtsCategoryBtn).click();
+  }
+
+  static verifyMenTshirtsProducts() {
+    cy.get(menTshirtsProductsLbl).should('be.visible');
   }
 }
 
