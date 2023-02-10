@@ -1,5 +1,5 @@
-import contactUsPage from '../PageObjects/contactUsPage';
-import homePage from '../PageObjects/homePage';
+import contactUsPage from '../PageObjects/ContactUsPage';
+import homePage from '../PageObjects/HomePage';
 
 describe('As a non registered user I want to verify that I can complete and submit a Contact Us form', () => {
   it('Given I am a non registered user located in the home page', () => {
@@ -10,11 +10,11 @@ describe('As a non registered user I want to verify that I can complete and subm
     homePage.clickOnContactUs();
     contactUsPage.verifyContactUsPage();
   });
-  
+
   it('And I complete the Contact Us form', () => {
     contactUsPage.enterContactDetails();
   });
-  
+
   it('And I click the submit button', () => {
     contactUsPage.clickSubmitButton();
   });

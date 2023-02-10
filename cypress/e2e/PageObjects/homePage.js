@@ -15,6 +15,10 @@ const shoppingCartLbl = '.active';
 const categoryLbl = '.left-sidebar > :nth-child(1)';
 const womenCategoryBtn = ':nth-child(1) > .panel-heading > .panel-title > a';
 const womenDressCategoryBtn = '#Women > .panel-body > ul > :nth-child(1) > a';
+const firstProductLnk = '//a[@href="/product_details/1"]'; // xpath
+const recommendedItems = 'recommended items';
+const recommendedProdCarousel = '.carousel-inner';
+const cartRecommendedProdButton = '.add-to-cart';
 
 class homePage {
   static clickLogOut() {
@@ -70,6 +74,18 @@ class homePage {
 
   static clickOnWomenDressCategory() {
     cy.get(womenDressCategoryBtn).click();
+  }
+  
+  static selectFirstProduct() {
+    cy.xpath(firstProductLnk).click();
+  }
+
+  static navigateToRecommendedItems() {
+    cy.contains(recommendedItems).should('be.visible').scrollIntoView();
+  }
+
+  static addToCartRecommendedProduct(prodIndex) {
+    cy.get(recommendedProdCarousel).find(cartRecommendedProdButton).eq(prodIndex).click();
   }
 }
 

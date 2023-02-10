@@ -1,6 +1,12 @@
 {
+    "blueTopPrice" : "Rs. 500",
+    "blueTopInfo" : "Blue Top",
     "menShirtPrice" : "Rs. 400",
     "menShirtInfo" : "Men Tshirt",
-    "dressPrice" : "Rs. 1000",
-    "dressInfo" : "Sleeveless Dress"
+    "fancyTopPrice": "Rs. 700",
+    "fancyTopInfo": "Fancy Green Top",
+    "greenTShirtPrice": "Rs. 1000",
+    "greenTShirtInfo": "Green Side Placket Detail T-Shirt",
+    "cottonTShirtPrice": "Rs. 850",
+    "cottonTShirtInfo": "Pure Cotton Neon Green Tshirt"
 }

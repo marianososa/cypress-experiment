@@ -14,6 +14,7 @@ const womenDressCategoryLbl = '.title';
 const menCategoryBtn = ':nth-child(2) > .panel-heading > .panel-title > a';
 const menTshirtsCategoryBtn = '#Men > .panel-body > ul > :nth-child(1) > a';
 const menTshirtsProductsLbl = '.title';
+const brandProductsLink = '.brands-name ul a';
 
 class productsPage {
   static searchForProduct(product) {
@@ -69,6 +70,9 @@ class productsPage {
 
   static verifyMenTshirtsProducts() {
     cy.get(menTshirtsProductsLbl).should('be.visible');
+
+  static navigateToBrandFromList(brandIndex) {
+    cy.get(brandProductsLink).eq(brandIndex).click();
   }
 }
 
