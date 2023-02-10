@@ -13,6 +13,9 @@ const successfullSubscribedLbl = '.alert-success';
 const cartLnk = 'Cart';
 const shoppingCartLbl = '.active';
 const firstProductLnk = '//a[@href="/product_details/1"]'; // xpath
+const recommendedItems = 'recommended items';
+const recommendedProdCarousel = '.carousel-inner';
+const cartRecommendedProdButton = '.add-to-cart';
 
 class homePage {
   static clickLogOut() {
@@ -60,6 +63,14 @@ class homePage {
 
   static selectFirstProduct() {
     cy.xpath(firstProductLnk).click();
+  }
+
+  static navigateToRecommendedItems() {
+    cy.contains(recommendedItems).should('be.visible').scrollIntoView();
+  }
+
+  static addToCartRecommendedProduct(prodIndex) {
+    cy.get(recommendedProdCarousel).find(cartRecommendedProdButton).eq(prodIndex).click();
   }
 }
 
