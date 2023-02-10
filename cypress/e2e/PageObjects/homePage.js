@@ -12,6 +12,9 @@ const arrowIconBtn = '[class="fa fa-arrow-circle-o-right"]';
 const successfullSubscribedLbl = '.alert-success';
 const cartLnk = 'Cart';
 const shoppingCartLbl = '.active';
+const categoryLbl = '.left-sidebar > :nth-child(1)';
+const womenCategoryBtn = ':nth-child(1) > .panel-heading > .panel-title > a';
+const womenDressCategoryBtn = '#Women > .panel-body > ul > :nth-child(1) > a';
 const firstProductLnk = '//a[@href="/product_details/1"]'; // xpath
 const recommendedItems = 'recommended items';
 const recommendedProdCarousel = '.carousel-inner';
@@ -61,6 +64,18 @@ class homePage {
     cy.get(successfullSubscribedLbl).should('be.visible');
   }
 
+  static verifyCategories() {
+    cy.get(categoryLbl).should('be.visible');
+  }
+
+  static clickOnWomenCategory() {
+    cy.get(womenCategoryBtn).click();
+  }
+
+  static clickOnWomenDressCategory() {
+    cy.get(womenDressCategoryBtn).click();
+  }
+  
   static selectFirstProduct() {
     cy.xpath(firstProductLnk).click();
   }
